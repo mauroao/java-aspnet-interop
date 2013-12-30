@@ -1,4 +1,4 @@
-Microsoft .NET and Java SE Interop example
+Microsoft .NET and Java SE interop example
 ===================
 
 This project contains an ASP.NET Web API server and a Java client aplication.
