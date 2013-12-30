@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<h1>Java consuming ASP.NET Web API</h1>
+
+	<p>This site provides four methods. These methods have been developed using Microsoft Web API and will be consumed by an application written in JAVA. </p>
+
+	<h3>Method 1 - Get (api/languages/)</h3>
+
+	<p>
+		This method returns all indexed languages. <br />
+		@Html.RouteLink("link", "DefaultApi", new { controller = "Languages", httproute = true }) 
+	</p>
+
+	<h3>Method 2 - Get (api/languages/5/)</h3>
+
+	<p>
+		This method returns language by its index. <br />
+		@Html.RouteLink("link", "DefaultApi", new { controller = "Languages", httproute = true, index = 0 }) 
+	</p>
+
+	<h3>Method 3 - Post (api/languages/)</h3>
+
+	<form action="~/api/languages/" method="post" >
+		<label for="valor">Language Name: </label>
+		<input type="text" id="valor" name="languageName" value="python">
+		<p>
+			<input type="submit" value="submit" >
+		</p>
+
+	</form>
+	
+</body>
+</html>
