@@ -3,7 +3,7 @@ java-aspnet-interop
 
 Java consuming ASP.NET Web API
 
-This project contains an ASP.NET server Web API and a Java client aplication.
+This project contains an ASP.NET Web API server and a Java client aplication.
 The site provides five methods. 
 
 These methods have been developed using Microsoft Web API and will be consumed by an application written in JAVA. 
