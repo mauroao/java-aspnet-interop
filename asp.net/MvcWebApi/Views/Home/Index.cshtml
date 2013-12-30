@@ -1,41 +1,60 @@
 ﻿@{
-    Layout = null;
+	Layout = null;
 }
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 </head>
+
 <body>
-	<h1>Java consuming ASP.NET Web API</h1>
+	<div class="container">
+		<div class="page-header">
+			<h1>.NET and Java interop example</h1>
+		</div>
+		
+		<p>This site contains an <code>ApiController</code> with five methods: <code>GET</code> (all), <code>GET</code> (one), <code>POST</code>, <code>PUT</code> and <code>DELETE</code>. <br />
+			The controller manages a database of program languages that will be consumed by a client HTTP Java application. </p>
 
-	<p>This site provides four methods. These methods have been developed using Microsoft Web API and will be consumed by an application written in JAVA. </p>
-
-	<h3>Method 1 - Get (api/languages/)</h3>
-
-	<p>
-		This method returns all indexed languages. <br />
-		@Html.RouteLink("link", "DefaultApi", new { controller = "Languages", httproute = true }) 
-	</p>
-
-	<h3>Method 2 - Get (api/languages/5/)</h3>
-
-	<p>
-		This method returns language by its index. <br />
-		@Html.RouteLink("link", "DefaultApi", new { controller = "Languages", httproute = true, index = 0 }) 
-	</p>
-
-	<h3>Method 3 - Post (api/languages/)</h3>
-
-	<form action="~/api/languages/" method="post" >
-		<label for="valor">Language Name: </label>
-		<input type="text" id="valor" name="languageName" value="python">
+		<h3>GET <small>(all languages)</small> </h3>
 		<p>
-			<input type="submit" value="submit" >
+			This method returns all indexed languages. <br />
+			Route: @Html.RouteLink(Url.HttpRouteUrl("DefaultApi", new { controller = "Languages", httproute = true }) , "DefaultApi", new { controller = "Languages", httproute = true })
 		</p>
 
-	</form>
-	
+		<h3>GET <small>(one language)</small> </h3>
+		<p>
+			This method returns language by its index.<br />
+			Route: @Html.RouteLink(Url.HttpRouteUrl("DefaultApi", new { controller = "Languages", httproute = true, index = 1 }) , "DefaultApi", new { controller = "Languages", httproute = true, index = 1 })
+		</p>
+
+		<h3>POST</h3>
+		<p>
+			This method inserts a new language.<br />
+			Route: @Url.HttpRouteUrl("DefaultApi", new { controller = "Languages", httproute = true } )
+		</p>
+
+		<h3>PUT</h3>
+		<p>
+			This method updates language by its index.<br />
+			Route: @Url.HttpRouteUrl("DefaultApi", new { controller = "Languages", httproute = true, index = 1 } )
+		</p>
+
+		<h3>DELETE</h3>
+		<p>
+			This method removes language by its index.<br />
+			Route: @Url.HttpRouteUrl("DefaultApi", new { controller = "Languages", httproute = true, index = 1 } )
+		</p>
+
+		<h3>How to test POST, PUT and DELETE methods</h3>
+
+		<p>To test these methods, you can use <strong>Fiddler Web Debugger</strong>  (<a href="http://fiddler2.com/get-fiddler">http://fiddler2.com</a>)</p>
+
+		<img src="~/Content/img/fiddler.png" />
+		<p class="text-muted">Fiddler executing POST method.</p>
+
+	</div>
 </body>
 </html>
