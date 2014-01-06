@@ -55,6 +55,15 @@
 		<img src="~/Content/img/fiddler.png" />
 		<p class="text-muted">Fiddler executing POST method.</p>
 
+		<h3>Troubleshooting</h3>
+
+		<h4 class="text-danger">Status code 405 - Method not allowed (PUT)</h4>
+
+		<p class="text-success">Solution: Go to the IIS site and click "Modules". Find WebDAV module and remove it. Now you can stil use WebDAV on your other sites and not interfere with the PUT method on this site.</p>
+
+		<img src="~/Content/img/iis.png" />
+		<p class="text-muted">IIS configuration</p>
+
 	</div>
 </body>
 </html>

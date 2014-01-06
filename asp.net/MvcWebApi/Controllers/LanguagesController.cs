@@ -51,7 +51,7 @@ namespace MvcWebApi.Controllers
 			LanguagesRepository.GetLanguages().Add(languageName);
 
 			var resp = Request.CreateResponse(HttpStatusCode.Created);
-			resp.Headers.Location = new Uri(string.Concat(Request.RequestUri, LanguagesRepository.GetLanguages().Count - 1));
+			resp.Headers.Location = new Uri(string.Concat(Request.RequestUri, "/", LanguagesRepository.GetLanguages().Count - 1));
 
 			return resp;
 		}
